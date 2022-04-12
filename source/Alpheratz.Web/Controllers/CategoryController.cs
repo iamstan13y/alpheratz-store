@@ -39,6 +39,7 @@ namespace Alpheratz.Web.Controllers
             {
                 _context.Categories!.Add(obj);
                 _context.SaveChanges();
+                TempData["success"] = "Category created successfully";
 
                 return RedirectToAction("Index");
             }
@@ -74,6 +75,7 @@ namespace Alpheratz.Web.Controllers
             {
                 _context.Categories!.Update(obj);
                 _context.SaveChanges();
+                TempData["success"] = "Category updated successfully";
 
                 return RedirectToAction("Index");
             }
@@ -107,6 +109,7 @@ namespace Alpheratz.Web.Controllers
 
             _context.Categories!.Remove(category);
             _context.SaveChanges();
+                TempData["success"] = "Category deleted successfully";
 
             return RedirectToAction("Index");
         }
