@@ -72,7 +72,7 @@ namespace Alpheratz.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                _context.Categories!.Add(obj);
+                _context.Categories!.Update(obj);
                 _context.SaveChanges();
 
                 return RedirectToAction("Index");
