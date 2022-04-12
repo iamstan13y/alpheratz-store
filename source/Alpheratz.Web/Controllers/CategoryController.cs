@@ -17,5 +17,10 @@ namespace Alpheratz.Web.Controllers
             var categories = _context.Categories!.ToList();
             return View(categories);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
