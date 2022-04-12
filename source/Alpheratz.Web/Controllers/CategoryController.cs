@@ -30,10 +30,15 @@ namespace Alpheratz.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Category obj)
         {
-            _context.Categories!.Add(obj);
-            _context.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _context.Categories!.Add(obj);
+                _context.SaveChanges();
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+
+            return View(obj);
         }
     }
 }
