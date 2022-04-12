@@ -30,6 +30,11 @@ namespace Alpheratz.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Category obj)
         {
+            if (obj.Name == obj.DisplayOrder.ToString())
+            {
+                ModelState.AddModelError("name", "The Display Order cannot exactly match the name.");
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Categories!.Add(obj);
