@@ -1,4 +1,5 @@
-﻿using Alpheratz.Web.Models.Data;
+﻿using Alpheratz.Web.Models;
+using Alpheratz.Web.Models.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Alpheratz.Web.Controllers
@@ -18,9 +19,21 @@ namespace Alpheratz.Web.Controllers
             return View(categories);
         }
 
+        //GET
         public IActionResult Create()
         {
             return View();
+        }
+        
+        //POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Category obj)
+        {
+            _context.Categories!.Add(obj);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     }
 }
