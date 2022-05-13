@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alpheratz.Web", "source\Alpheratz.Web\Alpheratz.Web.csproj", "{293AC9B9-C5B5-4EA8-A174-F4772598C31B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alpheratz.Data", "source\Alpheratz.Data\Alpheratz.Data.csproj", "{343F9386-53D9-44A9-ADCF-87646A8FDA42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{293AC9B9-C5B5-4EA8-A174-F4772598C31B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{293AC9B9-C5B5-4EA8-A174-F4772598C31B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{293AC9B9-C5B5-4EA8-A174-F4772598C31B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{343F9386-53D9-44A9-ADCF-87646A8FDA42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{343F9386-53D9-44A9-ADCF-87646A8FDA42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{343F9386-53D9-44A9-ADCF-87646A8FDA42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{343F9386-53D9-44A9-ADCF-87646A8FDA42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
