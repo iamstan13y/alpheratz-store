@@ -1,4 +1,4 @@
-using Alpheratz.Web.Models.Data;
+using Alpheratz.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

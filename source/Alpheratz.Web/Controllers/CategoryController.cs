@@ -1,5 +1,5 @@
-﻿using Alpheratz.Web.Models;
-using Alpheratz.Web.Models.Data;
+﻿using Alpheratz.DataAccess.Data;
+using Alpheratz.ModelLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Alpheratz.Web.Controllers

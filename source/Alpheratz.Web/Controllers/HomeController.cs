@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
+using Alpheratz.ModelLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
-using Alpheratz.Web.Models;
 
 namespace Alpheratz.Web.Controllers;
 
