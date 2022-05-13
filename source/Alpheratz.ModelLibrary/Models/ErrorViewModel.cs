@@ -1,4 +1,4 @@
-namespace Alpheratz.Web.Models;
+namespace Alpheratz.ModelLibrary.Models;
 
 public class ErrorViewModel
 {

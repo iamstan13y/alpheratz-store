@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Alpheratz.Web.Models
+namespace Alpheratz.ModelLibrary.Models
 {
     public class Category
     {

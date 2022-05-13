@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alpheratz.Web", "source\Alpheratz.Web\Alpheratz.Web.csproj", "{293AC9B9-C5B5-4EA8-A174-F4772598C31B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alpheratz.Data", "source\Alpheratz.Data\Alpheratz.Data.csproj", "{343F9386-53D9-44A9-ADCF-87646A8FDA42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alpheratz.DataAccess", "source\Alpheratz.Data\Alpheratz.DataAccess.csproj", "{343F9386-53D9-44A9-ADCF-87646A8FDA42}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alpheratz.ModelLibrary", "source\Alpheratz.ModelLibrary\Alpheratz.ModelLibrary.csproj", "{C85CE8F8-7478-4B82-97F0-F6D00229BAF6}"
 EndProject

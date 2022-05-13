@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Alpheratz.ModelLibrary.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace Alpheratz.Web.Models.Data
+namespace Alpheratz.DataAccess.Data
 {
     public class AppDbContext : DbContext
     {
