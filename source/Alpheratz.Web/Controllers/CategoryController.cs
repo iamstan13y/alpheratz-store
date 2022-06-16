@@ -38,8 +38,9 @@ namespace Alpheratz.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                _context.Categories!.Add(obj);
-                _context.SaveChanges();
+                _categoryRepository.Add(obj);
+                _categoryRepository.Save();
+
                 TempData["success"] = "Category created successfully";
 
                 return RedirectToAction("Index");
