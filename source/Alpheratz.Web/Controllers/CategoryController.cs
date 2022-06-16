@@ -71,8 +71,8 @@ namespace Alpheratz.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                _categoryRepository.Update(obj);
-                _categoryRepository.Save();
+                _unitOfWork.Category.Update(obj);
+                _unitOfWork.Save();
 
                 TempData["success"] = "Category updated successfully";
 
