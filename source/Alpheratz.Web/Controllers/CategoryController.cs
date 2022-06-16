@@ -101,13 +101,13 @@ namespace Alpheratz.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeletePost(int? id)
         {
-            var category = _categoryRepository.GetFirstOrDefault(u => u.Id == id);
+            var category = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
 
             if (category == null)
                 return NotFound();
 
-            _categoryRepository.Remove(category);
-            _categoryRepository.Save();
+            _unitOfWork.Category.Remove(category);
+            _unitOfWork.Save();
                 TempData["success"] = "Category deleted successfully";
 
             return RedirectToAction("Index");
