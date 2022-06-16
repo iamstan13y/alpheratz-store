@@ -12,7 +12,7 @@ namespace Alpheratz.Web.Controllers
         
         public IActionResult Index()
         {
-            IEnumerable<Category> categories = _categoryRepository.GetAll();
+            IEnumerable<Category> categories = _unitOfWork.Category.GetAll();
             return View(categories);
         }
 
