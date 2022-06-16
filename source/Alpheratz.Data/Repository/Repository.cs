@@ -36,7 +36,7 @@ namespace Alpheratz.DataAccess.Repository
 
         public void Remove(T entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Remove(entity);
         }
 
         public void RemoveRange(IEnumerable<T> entity)
