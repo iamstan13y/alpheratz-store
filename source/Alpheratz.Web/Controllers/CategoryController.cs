@@ -16,7 +16,7 @@ namespace Alpheratz.Web.Controllers
 
         public IActionResult Index()
         {
-            var categories = _context.Categories!.ToList();
+            IEnumerable<Category> categories = _categoryRepository.GetAll();
             return View(categories);
         }
 
