@@ -1,4 +1,5 @@
 ﻿using Alpheratz.DataAccess.Data;
+using Alpheratz.DataAccess.Repository.IRepository;
 using Alpheratz.ModelLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,11 +7,11 @@ namespace Alpheratz.Web.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public CategoryController(AppDbContext context)
+        public CategoryController(ICategoryRepository categoryRepository)
         {
-            _context = context;
+            _categoryRepository = categoryRepository;
         }
 
         public IActionResult Index()
