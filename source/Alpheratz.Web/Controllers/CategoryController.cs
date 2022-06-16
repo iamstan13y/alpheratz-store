@@ -55,7 +55,7 @@ namespace Alpheratz.Web.Controllers
             if (id == null || id == 0)
                 return NotFound();
 
-            var category = _context.Categories!.Find(id);
+            var category = _categoryRepository.GetFirstOrDefault(u => u.Id == id);
 
             if (category == null)
                 return NotFound();
@@ -75,8 +75,9 @@ namespace Alpheratz.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                _context.Categories!.Update(obj);
-                _context.SaveChanges();
+                _categoryRepository.Update(obj);
+                _categoryRepository.Save();
+
                 TempData["success"] = "Category updated successfully";
 
                 return RedirectToAction("Index");
