@@ -6,13 +6,10 @@ namespace Alpheratz.DataAccess.Repository
 {
     public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
-        private AppDbContext _context;
+        private readonly AppDbContext _context;
 
-        public CategoryRepository(AppDbContext context) : base(context)
-        {
-            _context = context;
-        }
-
+        public CategoryRepository(AppDbContext context) : base(context) => _context = context;
+        
         public void Update(Category category) => _context.Update(category);
     }
 }
