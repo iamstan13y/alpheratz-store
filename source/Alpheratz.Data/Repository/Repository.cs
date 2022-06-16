@@ -28,7 +28,10 @@ namespace Alpheratz.DataAccess.Repository
 
         public T GetFirstOrDefault(System.Linq.Expressions.Expression<Func<T, bool>> filter)
         {
-            throw new NotImplementedException();
+            IQueryable<T> query = _dbSet;
+            query = query.Where(filter);
+
+            return query.FirstOrDefault()!;
         }
 
         public void Remove(T entity)
