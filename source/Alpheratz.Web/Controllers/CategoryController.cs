@@ -1,4 +1,4 @@
-﻿using Alpheratz.DataAccess.Data;
+﻿using Alpheratz.DataAccess.Repository.IRepository;
 using Alpheratz.ModelLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,16 +6,13 @@ namespace Alpheratz.Web.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CategoryController(AppDbContext context)
-        {
-            _context = context;
-        }
-
+        public CategoryController(IUnitOfWork unitOfWork) => _unitOfWork = unitOfWork;
+        
         public IActionResult Index()
         {
-            var categories = _context.Categories!.ToList();
+            IEnumerable<Category> categories = _unitOfWork.Category.GetAll();
             return View(categories);
         }
 
@@ -37,8 +34,9 @@ namespace Alpheratz.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                _context.Categories!.Add(obj);
-                _context.SaveChanges();
+                _unitOfWork.Category.Add(obj);
+                _unitOfWork.Save();
+
                 TempData["success"] = "Category created successfully";
 
                 return RedirectToAction("Index");
@@ -53,7 +51,7 @@ namespace Alpheratz.Web.Controllers
             if (id == null || id == 0)
                 return NotFound();
 
-            var category = _context.Categories!.Find(id);
+            var category = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
 
             if (category == null)
                 return NotFound();
@@ -73,8 +71,9 @@ namespace Alpheratz.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                _context.Categories!.Update(obj);
-                _context.SaveChanges();
+                _unitOfWork.Category.Update(obj);
+                _unitOfWork.Save();
+
                 TempData["success"] = "Category updated successfully";
 
                 return RedirectToAction("Index");
@@ -89,7 +88,7 @@ namespace Alpheratz.Web.Controllers
             if (id == null || id == 0)
                 return NotFound();
 
-            var category = _context.Categories!.Find(id);
+            var category = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
 
             if (category == null)
                 return NotFound();
@@ -102,13 +101,13 @@ namespace Alpheratz.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeletePost(int? id)
         {
-            var category = _context.Categories!.Find(id);
+            var category = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
 
             if (category == null)
                 return NotFound();
 
-            _context.Categories!.Remove(category);
-            _context.SaveChanges();
+            _unitOfWork.Category.Remove(category);
+            _unitOfWork.Save();
                 TempData["success"] = "Category deleted successfully";
 
             return RedirectToAction("Index");
