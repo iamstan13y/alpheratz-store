@@ -1,7 +1,6 @@
 ﻿using Alpheratz.DataAccess.Data;
 using Alpheratz.DataAccess.Repository.IRepository;
 using Alpheratz.ModelLibrary.Models;
-using System.Linq.Expressions;
 
 namespace Alpheratz.DataAccess.Repository
 {
@@ -13,8 +12,6 @@ namespace Alpheratz.DataAccess.Repository
         {
             _context = context;
         }
-
-        public void Save() => _context.SaveChanges();
 
         public void Update(Category category) => _context.Update(category);
     }
