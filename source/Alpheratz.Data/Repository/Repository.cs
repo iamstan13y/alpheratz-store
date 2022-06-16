@@ -22,7 +22,8 @@ namespace Alpheratz.DataAccess.Repository
 
         public IEnumerable<T> GetAll()
         {
-            throw new NotImplementedException();
+            IQueryable<T> query = _dbSet;
+            return query.ToList();
         }
 
         public T GetFirstOrDefault(System.Linq.Expressions.Expression<Func<T, bool>> filter)
