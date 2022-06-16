@@ -1,5 +1,4 @@
-﻿using Alpheratz.DataAccess.Data;
-using Alpheratz.DataAccess.Repository.IRepository;
+﻿using Alpheratz.DataAccess.Repository.IRepository;
 using Alpheratz.ModelLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,11 +8,8 @@ namespace Alpheratz.Web.Controllers
     {
         private readonly ICategoryRepository _categoryRepository;
 
-        public CategoryController(ICategoryRepository categoryRepository)
-        {
-            _categoryRepository = categoryRepository;
-        }
-
+        public CategoryController(ICategoryRepository categoryRepository) => _categoryRepository = categoryRepository;
+        
         public IActionResult Index()
         {
             IEnumerable<Category> categories = _categoryRepository.GetAll();
