@@ -5,7 +5,7 @@ namespace Alpheratz.DataAccess.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private AppDbContext _context;
+        private readonly AppDbContext _context;
         public ICategoryRepository Category { get; private set; }
 
         public UnitOfWork(AppDbContext context)
