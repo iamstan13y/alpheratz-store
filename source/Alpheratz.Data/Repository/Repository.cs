@@ -17,7 +17,7 @@ namespace Alpheratz.DataAccess.Repository
 
         public void Add(T entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Add(entity);
         }
 
         public IEnumerable<T> GetAll()
