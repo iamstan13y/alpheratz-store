@@ -6,9 +6,9 @@ namespace Alpheratz.Web.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly ICategoryRepository _categoryRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public CategoryController(ICategoryRepository categoryRepository) => _categoryRepository = categoryRepository;
+        public CategoryController(IUnitOfWork unitOfWork) => _unitOfWork = unitOfWork;
         
         public IActionResult Index()
         {
