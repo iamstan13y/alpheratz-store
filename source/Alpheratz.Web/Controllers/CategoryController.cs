@@ -92,7 +92,7 @@ namespace Alpheratz.Web.Controllers
             if (id == null || id == 0)
                 return NotFound();
 
-            var category = _context.Categories!.Find(id);
+            var category = _categoryRepository.GetFirstOrDefault(u => u.Id == id);
 
             if (category == null)
                 return NotFound();
@@ -105,13 +105,13 @@ namespace Alpheratz.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeletePost(int? id)
         {
-            var category = _context.Categories!.Find(id);
+            var category = _categoryRepository.GetFirstOrDefault(u => u.Id == id);
 
             if (category == null)
                 return NotFound();
 
-            _context.Categories!.Remove(category);
-            _context.SaveChanges();
+            _categoryRepository.Remove(category);
+            _categoryRepository.Save();
                 TempData["success"] = "Category deleted successfully";
 
             return RedirectToAction("Index");
