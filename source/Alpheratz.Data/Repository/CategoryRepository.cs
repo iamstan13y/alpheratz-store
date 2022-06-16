@@ -39,10 +39,7 @@ namespace Alpheratz.DataAccess.Repository
             throw new NotImplementedException();
         }
 
-        public void Save()
-        {
-            throw new NotImplementedException();
-        }
+        public void Save() => _context.SaveChanges();
 
         public void Update(Category category)
         {
