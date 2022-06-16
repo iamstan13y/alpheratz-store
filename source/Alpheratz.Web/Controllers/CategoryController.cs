@@ -88,7 +88,7 @@ namespace Alpheratz.Web.Controllers
             if (id == null || id == 0)
                 return NotFound();
 
-            var category = _categoryRepository.GetFirstOrDefault(u => u.Id == id);
+            var category = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
 
             if (category == null)
                 return NotFound();
