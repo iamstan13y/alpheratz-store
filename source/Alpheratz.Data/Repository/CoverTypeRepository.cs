@@ -10,9 +10,6 @@ namespace Alpheratz.DataAccess.Repository
 
         public CoverTypeRepository(AppDbContext context) : base(context) => _context = context;
 
-        public void Update(CoverType coverType)
-        {
-            throw new NotImplementedException();
-        }
+        public void Update(CoverType coverType) => _context.Update(coverType);
     }
 }
