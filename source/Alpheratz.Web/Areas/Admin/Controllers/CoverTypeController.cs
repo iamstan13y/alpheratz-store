@@ -91,17 +91,16 @@ namespace Alpheratz.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeletePost(int? id)
         {
-            var category = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
+            var coverType = _unitOfWork.CoverType.GetFirstOrDefault(u => u.Id == id);
 
-            if (category == null)
+            if (coverType == null)
                 return NotFound();
 
-            _unitOfWork.Category.Remove(category);
+            _unitOfWork.CoverType.Remove(coverType);
             _unitOfWork.Save();
-            TempData["success"] = "Category deleted successfully";
+            TempData["success"] = "Cover Type deleted successfully";
 
             return RedirectToAction("Index");
         }
-
     }
 }
