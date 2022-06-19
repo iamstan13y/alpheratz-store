@@ -46,12 +46,12 @@ namespace Alpheratz.Web.Areas.Admin.Controllers
             if (id == null || id == 0)
                 return NotFound();
 
-            var category = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
+            var coverType = _unitOfWork.CoverType.GetFirstOrDefault(u => u.Id == id);
 
-            if (category == null)
+            if (coverType == null)
                 return NotFound();
 
-            return View(category);
+            return View(coverType);
         }
 
         //POST
