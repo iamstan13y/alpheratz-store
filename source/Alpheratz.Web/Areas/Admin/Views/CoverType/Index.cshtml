@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Category>
+﻿@model IEnumerable<CoverType>
 
 @{
     ViewData["Title"] = "Index";
@@ -8,11 +8,11 @@
     <div class="row pt-4">
         <div class="col-6">
             <h2 class="text-primary">
-                Category List
+                Cover Type List
             </h2>
         </div>
         <div class="col-6 text-end">
-            <a asp-controller="Category" asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i>&nbsp;Create New Category</a>
+            <a asp-controller="Category" asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i>&nbsp;Create New Cover Type</a>
         </div>
     </div>
     <br/><br/>
@@ -22,9 +22,6 @@
         <tr>
             <th>
                 Category Name
-            </th>
-            <th>
-                Display Order
             </th>
             <th></th>
         </tr>
@@ -36,15 +33,12 @@
                <td width="50%">
                    @item.Name
                </td>
-               <td width="30%">
-                   @item.DisplayOrder
-               </td>
                <td>
                    <div class="w-75 btn-group" role="group">
-                       <a asp-controller="Category" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary mx-2">
+                       <a asp-controller="CoverType" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary mx-2">
                            <i class="bi bi-pencil-square"></i>&nbsp Edit
                         </a>
-                        <a asp-controller="Category" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger mx-2">
+                        <a asp-controller="CoverType" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger mx-2">
                            <i class="bi bi-trash-fill"></i>&nbsp Delete
                         </a>
                    </div>
