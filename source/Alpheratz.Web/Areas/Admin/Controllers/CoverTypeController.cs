@@ -1,4 +1,5 @@
 ﻿using Alpheratz.DataAccess.Repository.IRepository;
+using Alpheratz.ModelLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Alpheratz.Web.Areas.Admin.Controllers
@@ -11,7 +12,7 @@ namespace Alpheratz.Web.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Category> categories = _unitOfWork.Category.GetAll();
+            IEnumerable<CoverType> categories = _unitOfWork.CoverType.GetAll();
             return View(categories);
         }
 
