@@ -25,19 +25,14 @@ namespace Alpheratz.Web.Areas.Admin.Controllers
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Category obj)
+        public IActionResult Create(CoverType obj)
         {
-            if (obj.Name == obj.DisplayOrder.ToString())
-            {
-                ModelState.AddModelError("name", "The Display Order cannot exactly match the name.");
-            }
-
             if (ModelState.IsValid)
             {
-                _unitOfWork.Category.Add(obj);
+                _unitOfWork.CoverType.Add(obj);
                 _unitOfWork.Save();
 
-                TempData["success"] = "Category created successfully";
+                TempData["success"] = "Cover Type created successfully";
 
                 return RedirectToAction("Index");
             }
