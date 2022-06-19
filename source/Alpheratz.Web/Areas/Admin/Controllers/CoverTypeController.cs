@@ -57,19 +57,14 @@ namespace Alpheratz.Web.Areas.Admin.Controllers
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Category obj)
+        public IActionResult Edit(CoverType obj)
         {
-            if (obj.Name == obj.DisplayOrder.ToString())
-            {
-                ModelState.AddModelError("name", "The Display Order cannot exactly match the name.");
-            }
-
             if (ModelState.IsValid)
             {
-                _unitOfWork.Category.Update(obj);
+                _unitOfWork.CoverType.Update(obj);
                 _unitOfWork.Save();
 
-                TempData["success"] = "Category updated successfully";
+                TempData["success"] = "Cover Type updated successfully";
 
                 return RedirectToAction("Index");
             }
