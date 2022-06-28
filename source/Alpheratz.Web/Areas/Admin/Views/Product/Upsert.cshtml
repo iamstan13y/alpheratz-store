@@ -3,7 +3,7 @@
 <form method="POST" asp-action="Upsert">
     <div class="border p-3 mt-4">
         <div class="row pd-2">
-            <h2 class="text-primary">Edit Cover Type</h2>
+            <h2 class="text-primary">Edit Product</h2>
             <hr/>
         </div>
         @*<div asp-validation-summary="All"></div>*@
@@ -11,6 +11,11 @@
             <label asp-for="Title"></label>
             <input asp-for="Title" class="form-control"/>
             <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description" rows="3" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
         </div>
         <div class="mb-3">
             <label asp-for="ISBN"></label>
@@ -26,6 +31,21 @@
             <label asp-for="ListPrice"></label>
             <input asp-for="ListPrice" class="form-control"/>
             <span asp-validation-for="ListPrice" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" class="form-control"/>
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Price50"></label>
+            <input asp-for="Price50" class="form-control"/>
+            <span asp-validation-for="Price50" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Price100"></label>
+            <input asp-for="Price100" class="form-control"/>
+            <span asp-validation-for="Price100" class="text-danger"></span>
         </div>
         <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
         <a asp-controller="CoverType" asp-action="Index" class="btn btn-secondary" style="width:150px">
