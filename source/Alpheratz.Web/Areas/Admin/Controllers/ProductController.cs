@@ -1,16 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Alpheratz.DataAccess.Repository.IRepository;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Alpheratz.Web.Areas.Admin.Controllers
 {
-    public class CoverTypeController : Controller
+    public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public CoverTypeController(IUnitOfWork unitOfWork) => _unitOfWork = unitOfWork;
+        public ProductController(IUnitOfWork unitOfWork) => _unitOfWork = unitOfWork;
 
         public IActionResult Index()
         {
-            IEnumerable<CoverType> categories = _unitOfWork.CoverType.GetAll();
+            IEnumerable<Product> categories = _unitOfWork..GetAll();
             return View(categories);
         }
 
