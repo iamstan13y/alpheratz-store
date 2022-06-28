@@ -21,6 +21,7 @@ namespace Alpheratz.DataAccess.Repository
                 productFromDb.Description = product.Description;
                 productFromDb.Price50 = product.Price50;
                 productFromDb.ISBN = product.ISBN;
+                productFromDb.ListPrice = product.ListPrice;
                 productFromDb.Price = product.Price;
                 productFromDb.Title = product.Title;
                 if (product.ImageUrl != null)
