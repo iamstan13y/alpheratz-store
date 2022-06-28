@@ -17,47 +17,25 @@ namespace Alpheratz.Web.Areas.Admin.Controllers
         }
 
         //GET
-        public IActionResult Create()
+        public IActionResult Upsert(int? id)
         {
-            return View();
-        }
-
-        //POST
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create(CoverType obj)
-        {
-            if (ModelState.IsValid)
+            Product product = new();
+            if (id == null || id == 0) 
             {
-                _unitOfWork.CoverType.Add(obj);
-                _unitOfWork.Save();
+                return View(product);
+            }
+            else
+            {
 
-                TempData["success"] = "Cover Type created successfully";
-
-                return RedirectToAction("Index");
             }
 
-            return View(obj);
-        }
-
-        //GET
-        public IActionResult Edit(int? id)
-        {
-            if (id == null || id == 0)
-                return NotFound();
-
-            var coverType = _unitOfWork.CoverType.GetFirstOrDefault(u => u.Id == id);
-
-            if (coverType == null)
-                return NotFound();
-
-            return View(coverType);
+            return View(product);
         }
 
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(CoverType obj)
+        public IActionResult Upsert(CoverType obj)
         {
             if (ModelState.IsValid)
             {
