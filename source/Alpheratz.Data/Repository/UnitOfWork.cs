@@ -9,12 +9,14 @@ namespace Alpheratz.DataAccess.Repository
         public ICategoryRepository Category { get; private set; }
 
         public ICoverTypeRepository CoverType { get; private set; }
+        public IProductRepository Product { get; private set; }
 
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
             Category = new CategoryRepository(context);
             CoverType = new CoverTypeRepository(context);
+            Product = new ProductRepository(context);
         }
 
         public void Save() => _context.SaveChanges();
